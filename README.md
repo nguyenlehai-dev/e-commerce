@@ -1,8 +1,37 @@
-# E-commerce Store Platform
+# AI Account Commerce
 
-Monorepo mau cho san thuong mai dien tu gom ReactJS frontend, Python FastAPI backend, docs, CI/CD va Scrum artifacts.
+Modular ecommerce for AI accounts with role-based pricing, digital inventory, wallet checkout, warranty, finance, coupons, and negotiation chat.
 
-## Run frontend
+## Stack
+
+- `frontend/`: React + TypeScript
+- `backend/`: FastAPI
+- `docs/`: business flow and backlog notes
+
+## What is included
+
+- Retail, wholesale, collaborator, and admin roles
+- Credential pool inventory per product
+- Auto-delivery checkout with stock locking
+- Coupon validation by role and minimum order value
+- Wallet topup and finance ledger
+- Warranty ticket and replacement flow
+- Negotiated chat offer flow
+- Admin dashboard metrics
+
+## Run
+
+Backend:
+
+```bash
+cd backend
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+uvicorn app.main:app --host 127.0.0.1 --port 8000
+```
+
+Frontend:
 
 ```bash
 cd frontend
@@ -10,19 +39,8 @@ npm install
 npm run dev
 ```
 
-## Run backend
+## URLs
 
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r backend/requirements.txt
-uvicorn backend.app.main:app --reload
-```
-
-## Structure
-
-- `frontend/`: ReactJS ecommerce UI theo modules.
-- `backend/`: FastAPI API skeleton theo modules.
-- `docs/`: tai lieu tong quan du an.
-- `scrum/`: backlog, sprint va user stories.
-- `cicd/`: workflow, Dockerfile va nginx config.
+- Frontend: `http://127.0.0.1:5173`
+- Backend health: `http://127.0.0.1:8000/health`
+- Swagger: `http://127.0.0.1:8000/docs`

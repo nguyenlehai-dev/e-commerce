@@ -6,7 +6,10 @@ class LoginRequest(BaseModel):
     password: str
 
 
-class AuthSession(BaseModel):
-    access_token: str
-    token_type: str = "bearer"
-    user_id: int
+class UserProfile(BaseModel):
+    id: str
+    name: str
+    email: str
+    role: str
+    balance: int
+    commission_balance: int
